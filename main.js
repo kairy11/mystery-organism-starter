@@ -23,7 +23,7 @@ const pAequorFactory = (specimenNum, dna) => {
       const currentBase = this.dna[randomIndex];
       let newBase = returnRandBase();
       while (newBase === currentBase) {
-        newBase = returnRandBase;
+        newBase = returnRandBase();
       };
       this.dna[randomIndex] = newBase;
       return this.dna;
@@ -56,10 +56,11 @@ while (survivors.length < 30) {
   }
 }
 
-//Test the 30 specimens and makes sure they all survive and make sure they are all labeled with different numbers
+/*Test the 30 specimens and makes sure they all survive and make sure they are all labeled with different numbers
 survivors.forEach(org => {
   console.log(`Specimen ${org.specimenNum} - Survives: ${org.willLikelySurvive()} `);
 });
+*/
 
 /*Test the mutate method
 const testSubject = pAequorFactory(1, mockUpStrand());
