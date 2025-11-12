@@ -45,6 +45,22 @@ const pAequorFactory = (specimenNum, dna) => {
   };
 };
 
+//Create 30 Specimens
+const survivors = [];
+let id = 1;
+while (survivors.length < 30) {
+  let newOrg = pAequorFactory(id, mockUpStrand());
+  if (newOrg.willLikelySurvive()) {
+    survivors.push(newOrg);
+    id++
+  }
+}
+
+//Test the 30 specimens and makes sure they all survive and make sure they are all labeled with different numbers
+survivors.forEach(org => {
+  console.log(`Specimen ${org.specimenNum} - Survives: ${org.willLikelySurvive()} `);
+});
+
 /*Test the mutate method
 const testSubject = pAequorFactory(1, mockUpStrand());
 console.log('Before mutation:', testSubject.dna);
